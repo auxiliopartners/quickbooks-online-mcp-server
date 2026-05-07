@@ -1,10 +1,10 @@
 /**
  * Prototype-shape contract test for search_budgets.
  *
- * Mirrors general-ledger.prototype-shape.test: exercises the handler against
- * the real node-quickbooks prototype (not the hand-rolled mock) so any future
- * drift between the handler's method name and the library's prototype method
- * name fails loudly without needing network or credentials.
+ * Exercises the handler against the real node-quickbooks prototype (not the
+ * hand-rolled mock) so any future drift between the handler's method name and
+ * the library's prototype method name fails loudly in CI without needing
+ * network or credentials.
  */
 import { jest, describe, it, expect, beforeEach } from '@jest/globals';
 import QuickBooks from 'node-quickbooks';
