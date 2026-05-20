@@ -1,12 +1,10 @@
 /**
  * Prototype-shape contract test for get_general_ledger.
  *
- * The existing reports.handlers.test uses a hand-rolled mock that stubs whatever
- * method name the handler happens to call. That lets a typo in the handler
- * (e.g. reportGeneralLedger instead of the real reportGeneralLedgerDetail) slip
- * past CI because the mock agrees with the typo. This test closes that loop by
- * verifying the handler invokes a method that actually exists on the real
- * node-quickbooks prototype.
+ * Exercises the handler against the real node-quickbooks prototype (not the
+ * hand-rolled mock) so any future drift between the handler's method name and
+ * the library's prototype method name fails loudly in CI without needing
+ * network or credentials.
  */
 import { jest, describe, it, expect, beforeEach } from '@jest/globals';
 import QuickBooks from 'node-quickbooks';
